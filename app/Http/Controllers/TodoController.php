@@ -44,9 +44,9 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $input['user_id'] = Auth::id(); 
+        $input['user_id'] = Auth::id();
         $this->todo->fill($input)->save();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
